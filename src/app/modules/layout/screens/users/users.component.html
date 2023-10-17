@@ -1,0 +1,101 @@
+
+
+
+
+
+
+<div >
+
+	
+	<div class="searchuserdiv">
+
+		<h2> Kullanıcı Ara</h2>
+		<form [formGroup]="searchForm">
+	  
+		<label for="fname">&nbsp;&nbsp;&nbsp;First Name  </label>
+		<input type="text"  formControlName="Adi" placeholder="Enter name">
+		
+		
+	
+		<label for="lname">&nbsp;&nbsp;&nbsp;Last Name  </label>
+		<input type="text" formControlName="Soyadi" placeholder="Enter soyad">
+
+	
+		<label for="eposta">&nbsp;&nbsp;&nbsp;E posta</label>
+		<input type="text"  formControlName="Eposta" placeholder="Enter esposta">
+		&nbsp;&nbsp;&nbsp;
+		
+		<button style="color: white; background-color: rgb(1, 90, 163); " (click)="SearchUser()" >Search User</button>
+		<p></p>
+		</form>
+	</div>
+
+<table class="center">
+	<thead>
+		<tr>
+            <th scope="col">#</th>
+			<th scope="col">Adı Soyadı</th>
+			<th scope="col">Kullanıcı Tipi</th>
+			<th scope="col">Eposta</th>
+			<th scope="col">Ceptelefon</th>
+            <th scope="col">Durum</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let item of users; index as i">
+			<td scope="row">{{ i + 1 }}</td>
+			<td>{{ item.AdSoyad }}</td>
+            <td>{{item.KullaniciTipiAdi}}</td>
+			<td>{{ item.Eposta  }}</td>
+			<td>{{ item.CepTelefon }}</td>
+            <td >{{ item.KullaniciDurumAdi }}</td> 
+			
+			<button	style="width:120px; height: 30px; " routerLink="/updateuser/{{item.KullaniciId}}" href="#" (click)="updateUser(users[i])">Update User</button>
+			<button style="width: 120px;
+			height: 30px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			background: rgb(255, 255, 255);
+			border: none;
+			border-radius: 5px;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+			background: #000000;" (click)="DeleteUser(users[i],i)" class="noselect"><span class="text">Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button>
+			
+		</tr>
+
+	
+	</tbody>
+
+</table>
+<mat-paginator [length]="100"
+	(page)="onPageChange($event)"
+	[pageIndex]="page"
+	[pageSize]="tablesize"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page"
+	
+  >
+  </mat-paginator>
+<button style="width: 130px;
+			   height: 30px;
+			   margin-left: 1110px;
+			   margin-top: 15px;
+			   background-color: rgb(1, 90, 163);
+			   color: white;" (click)="onNewUserClick()">New User &#8594;</button>
+
+
+
+
+
+</div>
+
+
+
+  
+
+
+
+
+

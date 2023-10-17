@@ -1,0 +1,23 @@
+<form  #userForm="ngForm"(ngSubmit)="getUsersFormData(userForm.value)"> 
+
+<h2> Yeni Kullanıcı</h2>
+
+	<input type="text"  [(ngModel)]="user.Adi" name="adi" placeholder="Enter name">
+	<br><br>
+	<input type="text"  [(ngModel)]="user.Soyadi" name="soyadi" placeholder="Enter soyad">
+	<br><br>
+	<input type="text"  [(ngModel)]="user.Eposta" name="eposta" placeholder="Enter esposta">
+	<br><br>
+	<input type="text"  [(ngModel)]="user.SifreAcik" name="sifreAcik" placeholder="Enter sifre">
+	<br><br>
+	<input type="text"  [(ngModel)]="user.CepTelefon" name="cepTelefon" placeholder="Enter cep">
+	<br><br>
+	<input type="text"  [(ngModel)]="user.Telefon" name="telefon" placeholder="Enter telefon">
+	<br><br>
+	<input type="text"  [(ngModel)]="user.Adres" name="adres" placeholder="Enter adres">
+	<br><br>
+	<input type="text"  [(ngModel)]="user.SicilNo" name="sicilNo" placeholder="Enter sicilno">
+	<br><br>
+	<button> Add new user</button>
+
+</form>

@@ -1,0 +1,62 @@
+<form [formGroup]="sprofileForm"  (submit)="UpdateSelfProfile()" autocomplete="new-password">
+    <h1>Update Form</h1>
+   
+      
+			
+    <div class="form-control">
+     <p><label for="eposta">Eposta</label></p> 
+      <input
+        
+        formControlName="Eposta"
+        id="eposta"
+        autocomplete="new-password"
+        type="eposta"
+      />
+      
+     
+
+
+
+    </div>
+  
+    <div class="form-control">
+      <p><label for="adi">Adi</label></p>
+      
+      <input
+        formControlName="Adi"
+        id="adi"
+        autocomplete="new-password"
+        type="text"
+      />
+    </div>
+
+    <div class="form-control">
+      <p><label for="adi">Soyad</label></p>
+      
+      <input
+        formControlName="Soyadi"
+        id="soyadi"
+        autocomplete="new-password"
+        type="text"
+      />
+    </div>
+
+    <div class="form-control">
+        <p><label for="ceptelefon">Telefon</label></p>
+        
+        <input
+          formControlName="CepTelefon"
+          id="ceptelefon"
+          autocomplete="new-password"
+          type="text"
+        />
+      </div>
+  
+    <button type="submit">Update</button>
+   <tr *ngFor="let u of users; let i = index" > 
+       <td>{{ u.Adi }}</td>
+       <td>{{ u.Soyadi }}</td>
+   </tr>
+  </form>
+
+  

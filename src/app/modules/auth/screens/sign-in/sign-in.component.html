@@ -1,0 +1,28 @@
+
+<form class="signform"[formGroup]="loginForm" (submit)="login()" autocomplete="new-password">
+    <h1>Login</h1>
+  
+    <div class="form-control">
+     <p><label for="eposta">Eposta</label></p> 
+      <input
+        formControlName="eposta"
+        id="eposta"
+        autocomplete="new-password"
+        type="eposta"
+      />
+    </div>
+  
+    <div class="form-control">
+      <p><label for="sifre">Password</label></p>
+      
+      <input
+        formControlName="sifre"
+        id="sifre"
+        autocomplete="new-password"
+        type="password"
+      />
+    </div>
+  
+    <button type="submit">Login &#8594;</button>
+    <span class="psw">Forgot password <a routerLink="forgotpassword" href="#" (click)="forgotPassword()">password?</a></span>
+  </form>

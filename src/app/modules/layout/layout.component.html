@@ -1,0 +1,44 @@
+<mat-toolbar style= " background-color: rgba(240, 240, 240, 0.829);">
+    <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Form Wise</span>
+    <span class="toolbar-item-spacer"></span>
+    <button mat-icon-button matTooltip="Like">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Share">
+        <mat-icon>share</mat-icon>
+    </button>   
+    <button mat-icon-button matTooltip="Notifications">
+        <mat-icon>notifications</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="app-container">
+    <mat-sidenav style="background-color:rgb(240, 240, 240);" #sidenav mode="side" [class.mat-elevation-z4]="true" class="app-sidenav">
+        <mat-nav-list>
+            <mat-list-item (click)="navigeteTo('/app/home')" routerLink="#">
+                <mat-icon>dashboard</mat-icon><a >Dashboard</a>
+            </mat-list-item>
+            <mat-list-item (click)="navigeteTo('/app/kullanicilar')">
+                <mat-icon>accessibility</mat-icon><span>Kullanıcılar</span>
+            </mat-list-item>
+            <mat-list-item (click)="navigeteTo('/app/profile')">
+                <mat-icon>account_circle</mat-icon><span>Profil</span>
+            </mat-list-item>
+            <mat-list-item (click)="navigeteTo('/app/changepassword')">
+                <mat-icon>cached</mat-icon><span>Şifre Değiştir</span>
+            </mat-list-item>
+            <mat-list-item routerLink="#">
+                <mat-icon>build</mat-icon><span>Ayarlar</span>
+            </mat-list-item>
+            <mat-list-item (click)="navigeteTo('/auth/sign-in')">
+                <mat-icon>logout</mat-icon><span>Çıkış Yap</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
