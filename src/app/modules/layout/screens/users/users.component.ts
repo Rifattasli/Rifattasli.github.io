@@ -56,7 +56,7 @@ export class UsersComponent implements OnInit {
 
   
 
-  //dsa
+  //dsadasdsa
 
   get_users() { 
     this.kullaniciService.getUsers(this.page, this.tablesize)
