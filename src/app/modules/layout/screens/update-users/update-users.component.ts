@@ -19,6 +19,7 @@ export class UpdateUsersComponent implements OnInit {
   stringValue: any;
   a: any;
   updateForm = new FormGroup({
+    AdSoyad: new FormControl('', Validators.required),
     Adi: new FormControl('', Validators.required),
     Soyadi: new FormControl('', Validators.required),
     CepTelefon: new FormControl('', Validators.required),
@@ -42,27 +43,31 @@ constructor(
   var a = this.route.snapshot.paramMap.get('id');
   this.numberValue = Number(a);
  
-  this.user.KullaniciId=this.numberValue;
-  this.kullaniciService.GetSingle(this.user.KullaniciId).subscribe((response: ProfileResponse ) => {this.user=response
+  this.user.id=this.numberValue;
+  this.kullaniciService.GetSingle(this.user.id).subscribe((response: ProfileResponse ) => {this.user=response
     this.updateForm.patchValue(response)
+    
   });
   
   
  }
 
 
- UpdateUser(){
+ UpdateUser(value:any){
   
   const request: UpdateResponse=Object.assign(new UpdateResponse(), this.updateForm.value);
-
-  this.user.Eposta= request.Eposta;
-  this.user.Adi= request.Adi;
-  this.user.Soyadi= request.Soyadi;
-  this.user.CepTelefon= request.CepTelefon;
-  this.kullaniciService.updateUser(this.user).subscribe(res=>{
-
-    console.log(res);
-  })
+let body={
+  Eposta: request.Eposta,
+  Adi: request.Adi,
+  Soyadi: request.Soyadi,
+  AdSoyad: request.Adi+ request.Soyadi ,
+  CepTelefon: request.CepTelefon,
+}
+this.kullaniciService.updateUser(body,this.user.id)
+.subscribe(response => {
+  console.log(response)
+})
+  
  }
 
  

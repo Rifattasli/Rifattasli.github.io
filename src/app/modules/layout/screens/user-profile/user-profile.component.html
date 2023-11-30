@@ -53,10 +53,12 @@
       </div>
   
     <button type="submit">Update</button>
-   <tr *ngFor="let u of users; let i = index" > 
+   <tr *ngFor="let u of loggedInUser; let i = index" > 
        <td>{{ u.Adi }}</td>
        <td>{{ u.Soyadi }}</td>
    </tr>
+
+   {{ loggedInUser.Adi }}
   </form>
 
   

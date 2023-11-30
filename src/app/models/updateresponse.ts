@@ -1,6 +1,7 @@
 
 export class UpdateResponse{
-    KullaniciId: string
+    AdSoyad: string
+    id: string
     Adi: string
     Soyadi: string
     CepTelefon: string

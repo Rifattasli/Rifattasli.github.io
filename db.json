@@ -1,0 +1,63 @@
+{
+  "kullanicilar": [
+    {
+      "id": 1,
+      "Adi": "Clark",
+      "Soyadi": "Kent",
+      "Eposta": "clark@gmail.com",
+      "Sifre": "clark1",
+      "CepTelefon": 123,
+      "Successful": 1,
+      " Description": "dsadas",
+      "FirmaId": 1,
+      "KullaniciTipiId": 1,
+      "Telefon": 123,
+      "Adres": "dasdas",
+      "KullaniciDurumId": 1,
+      "KayitTarihi": 1,
+      "KvkkOnay": 1,
+      "KvkkOnayTarihi": 1,
+      "KvkkOnayIp": 1,
+      "SicilNo": 1,
+      "KullaniciTipiAdi": "asd",
+      "KullaniciDurumAdi": "dasd",
+      "AdSoyad": "clark kent",
+      "SifreAcik": "clark1"
+    },
+    {
+      "id": 2,
+      "Adi": "Tony",
+      "Soyadi": "Stark",
+      "Eposta": "tony@gmail.com",
+      "Sifre": "tony1",
+      "CepTelefon": 124,
+      "Successful": 1,
+      " Description": "dsadasdas",
+      "FirmaId": 2,
+      "KullaniciTipiId": 2,
+      "Telefon": 123,
+      "Adres": "dasdas",
+      "KullaniciDurumId": 2,
+      "KayitTarihi": 2,
+      "KvkkOnay": 1,
+      "KvkkOnayTarihi": 2,
+      "KvkkOnayIp": 2,
+      "SicilNo": 2,
+      "KullaniciTipiAdi": "asdasd",
+      "KullaniciDurumAdi": "ddsaasd",
+      "AdSoyad": "Tony stark",
+      "SifreAcik": "tony1"
+    },
+    {
+      "Adi": "rıfat",
+      "Soyadi": "taa",
+      "Eposta": "rifathantasli@gmail.com",
+      "SifreAcik": "123",
+      "CepTelefon": "123",
+      "Telefon": "123",
+      "Adres": "dsa",
+      "SicilNo": "123",
+      "id": 3
+    }
+  ]
+}

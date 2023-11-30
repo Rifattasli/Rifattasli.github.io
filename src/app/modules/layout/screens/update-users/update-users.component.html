@@ -1,49 +1,25 @@
-<form [formGroup]="updateForm" (submit)="UpdateUser()" autocomplete="new-password">
+<form #loginForm="ngForm" (ngSubmit)="UpdateUser(loginForm.value)">
     <h1>Update Form</h1>
   
-    <div class="form-control">
-     <p><label for="eposta">Eposta</label></p> 
-      <input
-        formControlName="Eposta"
-        id="eposta"
-        autocomplete="new-password"
-        type="eposta"
-      />
-    </div>
-  
-    <div class="form-control">
-      <p><label for="adi">Adi</label></p>
-      
-      <input
-        formControlName="Adi"
-        id="adi"
-        autocomplete="new-password"
-        type="text"
-      />
-    </div>
-
-    <div class="form-control">
-      <p><label for="adi">Soyad</label></p>
-      
-      <input
-        formControlName="Soyadi"
-        id="soyadi"
-        autocomplete="new-password"
-        type="text"
-      />
-    </div>
-
-    <div class="form-control">
-        <p><label for="ceptelefon">Telefon</label></p>
-        
-        <input
-          formControlName="CepTelefon"
-          id="ceptelefon"
-          autocomplete="new-password"
-          type="number"
-        />
+    <div class="main">
+      <div class="input-fields">
+        <input name="Adi" ngModel placeholder="Name" id="name" type="text" class="input-field" />
       </div>
+      <div class="input-fields">
+        <input name="Soyadi" ngModel placeholder="soyad" id="name" type="text" class="input-field" />
+      </div>
+      <div class="input-fields">
+        <input name="Eposta" ngModel placeholder="esposta" id="name" type="text" class="input-field" />
+      </div>
+      <div class="input-fields">
+        <input name="Ceptelefon" ngModel placeholder="ceptelefon" id="name" type="number" class="input-field" />
+      </div>
+      
+      <button>Update Data </button>
+    </div>
   
-    <button type="submit">Update</button>
+   
 
   </form>
+
+  

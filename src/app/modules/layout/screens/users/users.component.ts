@@ -35,7 +35,7 @@ export class UsersComponent implements OnInit {
     Soyadi: new FormControl(''),
     Eposta: new FormControl('')
   })
-  
+//dasda
   
   user: ProfileResponse = new ProfileResponse();
   user2: ProfileResponse;
@@ -61,24 +61,24 @@ export class UsersComponent implements OnInit {
   get_users() { 
     this.kullaniciService.getUsers(this.page, this.tablesize)
       .subscribe((result) => {
-          this.users = result.Data
+          this.users = result
       });
   }
   getUsersFormData(data:any){
     console.log('sa knk');
     
     console.log(this.adi);
-    this.user.KullaniciId = 0
-    this.user.KullaniciTipiId = 2
+    this.user.id = 0
+    //this.user.KullaniciTipiId = 2
 
     this.kullaniciService.saveUser(this.user).subscribe((res)=>{
       console.warn(res)
-      if(res.Successful)
-      this.toastr.success("Başarıyla eklendi")
+      
+      
       
     })
   }
-
+//adassd
   
 
   SearchUser() {
@@ -96,7 +96,7 @@ export class UsersComponent implements OnInit {
     if(confirm("Are you sure to delete "+ data.Adi)==true) {
       console.log("Implement delete functionality here");
       this.users.splice(i,1)
-      this.kullaniciService.deleteUser(data.KullaniciId).subscribe((res)=>{
+      this.kullaniciService.deleteUser(data.id).subscribe((res)=>{
      console.log(res);
   
       })}
@@ -105,7 +105,7 @@ export class UsersComponent implements OnInit {
    }
    updateUser(user:any){
 
-    this.router.navigate(['/app/update',user.KullaniciId])
+    this.router.navigate(['/app/update',user.id])
    }
 
    onNewUserClick(){

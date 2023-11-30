@@ -1,6 +1,6 @@
 export class SelfProfileResponse{
 
-    KullaniciId: number
+    id: number
     FirmaId: number
     EskiSifre: string
     YeniSifre: string

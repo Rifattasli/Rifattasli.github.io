@@ -12,6 +12,7 @@ import { KullaniciService } from 'src/app/service/kullanici.service';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent {
+  adSoyad: string= '';
   eposta: string = '';
   adi: string = '';
   soyadi: string = '';
@@ -41,12 +42,12 @@ export class NewUserComponent {
 
   getUsersFormData(data:any){
     console.log(this.adi);
-    this.user.KullaniciId = 0
-    this.user.KullaniciTipiId = 2
+    this.user.id = 0
+    //this.user.KullaniciTipiId = 2
 
     this.kullaniciService.saveUser(this.user).subscribe((res)=>{
       console.warn(res)
-      if(res.Successful)
+     
       this.toastr.success("Başarıyla eklendi")
       
     })

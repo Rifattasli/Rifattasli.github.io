@@ -9,10 +9,14 @@ import { Router } from '@angular/router';
 import { UpdateResponse } from 'src/app/models/updateresponse';
 import { SelfProfileResponse } from 'src/app/models/selfprofileresponse';
 
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  styleUrls: ['./user-profile.component.css'],
+  providers: [
+    
+  ]
 })
 export class UserProfileComponent  implements OnInit{ 
 
@@ -46,6 +50,7 @@ constructor(
   public users: ProfileResponse[] = [];
   ngOnInit(){
       this.getProfile()
+      console.log(this.loggedInUser);
   }
 
   getProfile() {
@@ -64,9 +69,13 @@ constructor(
       console.log(res);
     })
 
+   
+
    }
 
-   
+   get loggedInUser() {
+    return this.kullaniciService.loggedInUser;
+  }
 
   
 }
